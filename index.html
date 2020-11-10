@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue todolist</title>
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet"> 
   <!-- Fontawesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'/>
   <!-- style -->
@@ -15,10 +17,19 @@
   <!-- TODO APP -->
   <div id="todo-app">
     <div class="wrapper">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="./img/logo.png" alt="Todos">
+      </div>
+
       <!-- Insert new todo -->
       <div class="insert">
-        <input type="text" v-model="newElement" @keyup.enter="addElement">
-        <button @click="addElement">Add</button>
+        <input type="text" maxlength="30"
+              v-model="newElement" @keyup.enter="addElement">
+        <a href="#" @click="addElement">
+          <i class="fas fa-angle-double-down"></i>
+        </a>
       </div>
 
       <!-- Todo List -->
@@ -30,7 +41,7 @@
               @click="removeElement(i)"></i>
           </li>
         </ul>
-        <p v-else>Lista vuota</p>
+        <p v-else class="empty-list">Inserisci qualcosa da fare...</p>
       </div>
     </div>
   </div>
