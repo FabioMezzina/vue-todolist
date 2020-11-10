@@ -4,13 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue todolist</title>
+  <!-- Fontawesome -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'/>
   <!-- style -->
   <link rel="stylesheet" href="./css/style.css">
   <!-- Vue.js -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-  
+  <!-- TODO APP -->
+  <div id="todo-app">
+    <div class="wrapper">
+      <!-- Insert new todo -->
+      <div class="insert">
+        <input type="text">
+        <button>Add</button>
+      </div>
+
+      <!-- Todo List -->
+      <div class="todo-list">
+        <ul v-if="list.length > 0">
+          <li v-for="(el, index) in list">
+            <span>{{ el }}</span>
+            <i class="fas fa-times"
+              @click="removeElement(index)"></i>
+          </li>
+        </ul>
+        <p v-else>Lista vuota</p>
+      </div>
+    </div>
+  </div>
   <!-- main script -->
   <script src="./js/main.js"></script>
 </body>
