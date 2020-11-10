@@ -17,7 +17,7 @@
     <div class="wrapper">
       <!-- Insert new todo -->
       <div class="insert">
-        <input type="text" v-model="newElement">
+        <input type="text" v-model="newElement" @keyup.enter="addElement">
         <button @click="addElement">Add</button>
       </div>
 
@@ -34,6 +34,7 @@
       </div>
     </div>
   </div>
+
   <!-- main script -->
   <script src="./js/main.js"></script>
 </body>

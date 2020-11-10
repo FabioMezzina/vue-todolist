@@ -11,12 +11,13 @@ const todo = new Vue({
   methods: {
     // remove the element with click on X
     removeElement(index) {
-      this.list.splice(index,1);
+      this.list.splice(index, 1);
     },
     // add an element if the input tag is not empty
     addElement() {
       if(this.newElement.trim() !== '') {
         this.list.push(this.newElement.trim());
+        this.newElement = '';
       }
     }
   }

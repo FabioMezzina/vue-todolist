@@ -4,6 +4,69 @@
   box-sizing: border-box;
 }
 
+/* UTILITY */
+ul {
+  list-style: none;
+}
+
+
 i {
   cursor: pointer;
+}
+
+/* TODO APP */
+#todo-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  height: 100vh;
+  width: 100%;
+  background-color: #cecece; /* debug */
+}
+
+/* WRAPPER */
+.wrapper {
+  flex-basis: 100%;
+  min-height: 100%;
+}
+
+/* Insert */
+.insert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.insert input {
+  width: 80%;
+  flex-basis: 30px;
+  border: 0;
+  border-radius: 15px;
+}
+
+.insert button {
+  width: 80px;
+  flex-basis: 40px;
+}
+
+
+/* Media queries */
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    flex-basis: 768px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  #todo-app {
+    justify-content: flex-end;
+  }
+  .wrapper {
+    flex-basis: 50%;
+  }
 }
