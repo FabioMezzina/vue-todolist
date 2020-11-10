@@ -25,7 +25,7 @@
 
       <!-- Insert new todo -->
       <div class="insert">
-        <input type="text" maxlength="30"
+        <input type="text" maxlength="30" placeholder="Inserisci nuova task"
               v-model="newElement" @keyup.enter="addElement">
         <a href="#" @click="addElement">
           <i class="fas fa-angle-double-down"></i>
@@ -41,7 +41,7 @@
               @click="removeElement(i)"></i>
           </li>
         </ul>
-        <p v-else class="empty-list">Inserisci qualcosa da fare...</p>
+        <p v-else class="empty-list">Non hai nulla da fare</p>
       </div>
     </div>
   </div>
