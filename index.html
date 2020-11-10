@@ -17,17 +17,17 @@
     <div class="wrapper">
       <!-- Insert new todo -->
       <div class="insert">
-        <input type="text">
-        <button>Add</button>
+        <input type="text" v-model="newElement">
+        <button @click="addElement">Add</button>
       </div>
 
       <!-- Todo List -->
       <div class="todo-list">
         <ul v-if="list.length > 0">
-          <li v-for="(el, index) in list">
+          <li v-for="(el, i) in list">
             <span>{{ el }}</span>
             <i class="fas fa-times"
-              @click="removeElement(index)"></i>
+              @click="removeElement(i)"></i>
           </li>
         </ul>
         <p v-else>Lista vuota</p>
